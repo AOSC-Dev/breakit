@@ -8,6 +8,14 @@ information from a package tree (such as
 Usage
 ---
 
+To build:
+
+```
+cargo build --release
+```
+
+To use:
+
 ```
 Usage: breakit [OPTIONS] [PACKAGES]...
 
