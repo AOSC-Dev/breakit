@@ -1,6 +1,10 @@
 Breakit!
 ---
 
+WARNING: If you don't know how to use this or get empty outputs,
+use Breaker instead.
+This tool is created for specialized cases like Python 3 upgrade.
+
 Tool to collect, write, and generate `PKGBREAK` (AOSCnese for `Breaks:`)
 information from a package tree (such as
 [aosc-os-abbs](https://github.com/AOSC-Dev/aosc-os-abbs)).
