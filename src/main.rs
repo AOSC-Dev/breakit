@@ -159,23 +159,21 @@ async fn main() -> Result<()> {
 					let epoch = stable_defines
 						.get("PKGEPOCH")
 						.map(|val| val.as_string());
-					if let Some(epoch) = epoch {
-						if epoch != "0" {
+					if let Some(epoch) = epoch
+						&& epoch != "0" {
 							ver.push_str(&epoch);
 							ver.push(':');
 						}
-					}
 
 					ver.push_str(&stable_spec.read("VER").into_string());
 					let rel = stable_spec.get("REL").map(|val| val.as_string());
-					if let Some(rel) = rel {
-						if rel != "0" {
+					if let Some(rel) = rel
+						&& rel != "0" {
 							ver.push('-');
 							ver.push_str(&rel);
 						}
-					}
 
-					broke_reqs.push(format!("{}<={}", &broke_pkg_name, ver));
+					broke_reqs.push(format!("{}<={}", broke_pkg_name, ver));
 					visited.push((srcpkg.section(), srcpkg.name().to_string()));
 				}
 				(Err(err), _) | (_, Err(err)) => {
